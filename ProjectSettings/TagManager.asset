@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - ButtonMain
+  - ButtonTopCollider
   layers:
   - Default
   - TransparentFX
@@ -14,7 +16,7 @@ TagManager:
   - UI
   - Player
   - Ground
-  - 
+  - buttonTopCollider
   - 
   - 
   - 
@@ -50,4 +52,7 @@ TagManager:
     locked: 0
   - name: Background
     uniqueID: 129550145
+    locked: 0
+  - name: 
+    uniqueID: 3109343179
     locked: 0
