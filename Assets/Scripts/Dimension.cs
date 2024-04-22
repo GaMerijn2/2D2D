@@ -5,15 +5,24 @@ using UnityEngine;
 
 public class Dimension : MonoBehaviour
 {
+    private HueSwitch hueSwitch;
+
+    private void Start()
+    {
+        hueSwitch = GameObject.Find("HueShifter").GetComponent<HueSwitch>();
+    }
+
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             SetActive(false);
+            hueSwitch.SwapColor();
         }
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             SetActive(true);
+            hueSwitch.SwapColor();
         }
     }
 
