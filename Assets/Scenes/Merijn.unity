@@ -6412,6 +6412,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2028686975}
   - component: {fileID: 2028686976}
+  - component: {fileID: 2028686977}
   m_Layer: 0
   m_Name: HueShifter
   m_TagString: Untagged
@@ -6446,7 +6447,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c5076d4cc02f494db95607336306c07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _PPVolume: {fileID: 0}
+  VolumeProfile: {fileID: 11400000, guid: c19c344f4f1227a418439834cf701dbd, type: 2}
+  useColor1: 1
+  activeColor: {r: 0, g: 0, b: 0, a: 0}
+  DimensionColor1: {r: 0.48584908, g: 1, b: 0.99491155, a: 0}
+  DimensionColor2: {r: 1, g: 0.39000803, b: 0, a: 0}
+--- !u!114 &2028686977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028686974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1a33566b90dfef4f952e9353f22abf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2029650137
 GameObject:
   m_ObjectHideFlags: 0
