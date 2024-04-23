@@ -27,7 +27,7 @@ public class HueSwitch : MonoBehaviour{
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetMouseButtonDown(0))
         {
             SwapColor();
         }
