@@ -27,7 +27,7 @@ public class HueSwitch : MonoBehaviour{
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(1))
         {
             SwapColor();
         }
