@@ -64,10 +64,9 @@ public class MenuManager : MonoBehaviour
         Application.OpenURL(link);
     }
 
-
-    public void a(int id)
+    public void LoadLevel(int id)
     {
         StaticData.CurrentLevel = id;
-        SceneManager.LoadScene()
+        SceneManager.LoadScene("Game");
     }
 }
