@@ -45,7 +45,7 @@ public class Level : MonoBehaviour
         foreach (var sprite in dimension.GetComponentsInChildren<SpriteRenderer>())
         {
             var color = sprite.color;
-            sprite.color = new Color(color.r, color.g, color.b, value ? 1 : 0.5f);
+            sprite.color = new Color(color.r, color.g, color.b, value ? 1 : 0.3f);
         }
     }
 
