@@ -1,5 +1,6 @@
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
@@ -61,5 +62,12 @@ public class MenuManager : MonoBehaviour
     public void OpenLinkToBrowser(string link)
     {
         Application.OpenURL(link);
+    }
+
+
+    public void a(int id)
+    {
+        StaticData.CurrentLevel = id;
+        SceneManager.LoadScene()
     }
 }
