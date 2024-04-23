@@ -34,17 +34,12 @@ public class Level : MonoBehaviour
         
         foreach (var rbs in dimension.GetComponentsInChildren<Rigidbody2D>())
         {
-            rbs.isKinematic = value;
+            rbs.bodyType = value ? RigidbodyType2D.Kinematic : RigidbodyType2D.Dynamic;
         }
         
-        foreach (var rbs in dimension.GetComponentsInChildren<SliderJoint2D>())
+        foreach (var sld in dimension.GetComponentsInChildren<SliderJoint2D>())
         {
-            rbs.enabled = value;
-        }
-        
-        foreach (var rbs in dimension.GetComponentsInChildren<Rigidbody2D>())
-        {
-            rbs.isKinematic = value;
+            sld.enabled = value;
         }
 
         foreach (var sprite in dimension.GetComponentsInChildren<SpriteRenderer>())
