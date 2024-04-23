@@ -21,7 +21,8 @@ public class HueSwitch : MonoBehaviour{
 
     private void Start()
     {
-        activeColor = DimensionColor1;
+        VolumeProfile.TryGet(out ColorAdjustments colorAdjustments);
+        colorAdjustments.colorFilter.value = DimensionColor1;
     }
 
     private void Update()
