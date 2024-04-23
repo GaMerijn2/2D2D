@@ -67,6 +67,6 @@ public class MenuManager : MonoBehaviour
     public void LoadLevel(int id)
     {
         StaticData.CurrentLevel = id;
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("JonasTestScene");
     }
 }
