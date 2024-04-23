@@ -41,7 +41,7 @@ public class Dimension : MonoBehaviour
         foreach (var sprite in GetComponentsInChildren<SpriteRenderer>())
         {
             var color = sprite.color;
-            sprite.color = new Color(color.r, color.g, color.b, value ? 1 : 0.5f);
+            sprite.color = new Color(color.r, color.g, color.b, value ? 1 : (StaticData.DoesLevelFullyDisappear ? 0 : 0.5f));
         }
     }
 }
