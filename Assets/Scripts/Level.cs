@@ -6,7 +6,13 @@ public class Level : MonoBehaviour
     public string LevelName;
     public Vector2 SpawnPos;
 
-    private int _currentDimension = 0;
+    private int _currentDimension = -1;
+
+    private void Start()
+    {
+        SwitchDimensions(0);
+    }
+
     private void SwitchDimensions(int dimension)
     {
         if (_currentDimension == dimension) return;
