@@ -25,6 +25,21 @@ public class Level : MonoBehaviour
         {
             collider.enabled = value;
         }
+        
+        foreach (var rbs in dimension.GetComponentsInChildren<Rigidbody2D>())
+        {
+            rbs.isKinematic = value;
+        }
+        
+        foreach (var rbs in dimension.GetComponentsInChildren<SliderJoint2D>())
+        {
+            rbs.enabled = value;
+        }
+        
+        foreach (var rbs in dimension.GetComponentsInChildren<Rigidbody2D>())
+        {
+            rbs.isKinematic = value;
+        }
 
         foreach (var sprite in dimension.GetComponentsInChildren<SpriteRenderer>())
         {
