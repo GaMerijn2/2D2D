@@ -1,6 +1,5 @@
-using System;
-using UnityEditor.EditorTools;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
@@ -8,6 +7,9 @@ public class HueSwitch : MonoBehaviour{
     
     [Header("PostProcessing References")]    
     public VolumeProfile VolumeProfile;
+
+    [Header("UnityEvent")]
+    public UnityEvent OnHueSwitch;
 
     [Header("Dimension Colors")]
     [SerializeField] bool useColor1 = true; // Flag to toggle between DimensionColor1 and DimensionColor2
@@ -24,7 +26,7 @@ public class HueSwitch : MonoBehaviour{
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             SwapColor();
         }
@@ -32,6 +34,7 @@ public class HueSwitch : MonoBehaviour{
 
     public void SwapColor()
     {
+        OnHueSwitch.Invoke();
         Debug.Log("Switched color");
         useColor1 = !useColor1; // Toggle the flag
         Color colorToApply = useColor1 ? DimensionColor1 : DimensionColor2;
