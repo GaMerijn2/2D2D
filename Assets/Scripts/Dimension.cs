@@ -5,7 +5,10 @@ using UnityEngine;
 
 public class Dimension : MonoBehaviour
 {
+    [Header("References")]
     private HueSwitch hueSwitch;
+
+    [SerializeField] private bool switchDimension;
 
     private void Start()
     {
@@ -14,15 +17,17 @@ public class Dimension : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+        if (Input.GetKeyDown(KeyCode.LeftControl) && switchDimension)
         {
             SetActive(false);
             hueSwitch.SwapColor();
+            switchDimension = !switchDimension;
         }
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+        if (Input.GetKeyDown(KeyCode.LeftShift) && !switchDimension)
         {
             SetActive(true);
             hueSwitch.SwapColor();
+            switchDimension = !switchDimension;
         }
     }
 

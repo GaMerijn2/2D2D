@@ -26,14 +26,15 @@ public class HueSwitch : MonoBehaviour{
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-        SwapColor();
+            SwapColor();
         }
     }
 
     public void SwapColor()
     {
-        Color colorToApply = useColor1 ? DimensionColor1 : DimensionColor2;
+        Debug.Log("Switched color");
         useColor1 = !useColor1; // Toggle the flag
+        Color colorToApply = useColor1 ? DimensionColor1 : DimensionColor2;
         VolumeProfile.TryGet(out ColorAdjustments colorAdjustments);
         colorAdjustments.colorFilter.value = colorToApply;
     }
