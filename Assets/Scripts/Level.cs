@@ -51,6 +51,7 @@ public class Level : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(StaticData.DimensionSwitchKey)) SwitchDimensions(_currentDimension == 0 ? 1 : 0);
+        // if (Input.GetKeyDown(StaticData.DimensionSwitchKey)) SwitchDimensions(_currentDimension == 0 ? 1 : 0);
+        if (Input.GetButtonDown(0)) SwitchDimensions(_currentDimension == 0 ? 1 : 0);
     }
 }
