@@ -34,7 +34,7 @@ public class Level : MonoBehaviour
         
         foreach (var rbs in dimension.GetComponentsInChildren<Rigidbody2D>())
         {
-            rbs.bodyType = value ? RigidbodyType2D.Kinematic : RigidbodyType2D.Dynamic;
+            rbs.bodyType = value ? RigidbodyType2D.Dynamic : RigidbodyType2D.Kinematic;
         }
         
         foreach (var sld in dimension.GetComponentsInChildren<SliderJoint2D>())
