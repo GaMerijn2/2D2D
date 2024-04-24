@@ -9,10 +9,20 @@ public class LevelLoader : MonoBehaviour
     public static float timer;
     public TMP_Text timerText;
 
+    public AudioClip Orange, Blue;
+    private AudioSource music => GetComponent<AudioSource>();
+
     private void Start()
     {
         timer = 0;
         LoadLevel(StaticData.CurrentLevel);
+    }
+    
+    public void SetClip(bool isOrange)
+    {
+        music.clip = isOrange ? Blue : Orange;
+        music.time = TimeCopy.time % music.clip.length;
+        music.Play();
     }
 
     private void Update()
