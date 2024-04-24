@@ -16,6 +16,7 @@ public class Level : MonoBehaviour
     private void SwitchDimensions(int dimension)
     {
         if (_currentDimension == dimension) return;
+        GetComponentInParent<LevelLoader>().SetClip(dimension == 1);
         
         _currentDimension = dimension;
         int l = transform.childCount;
