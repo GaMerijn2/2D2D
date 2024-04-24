@@ -4218,7 +4218,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1241625622
 Transform:
   m_ObjectHideFlags: 0
@@ -5109,7 +5109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6166930563349027301, guid: 7ebe339b691e0794e83b4ebc3f370ccd, type: 3}
       propertyPath: m_text
-      value: Press 'Q' to switch dimensions
+      value: Press 'Right Mouse Button' to switch dimensions
       objectReference: {fileID: 0}
     - target: {fileID: 6714091936720017659, guid: 7ebe339b691e0794e83b4ebc3f370ccd, type: 3}
       propertyPath: m_Pivot.x
@@ -5194,7 +5194,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3389606767814590550, guid: 7ebe339b691e0794e83b4ebc3f370ccd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 7ebe339b691e0794e83b4ebc3f370ccd, type: 3}
 --- !u!224 &1478267874 stripped
 RectTransform:
@@ -6411,7 +6414,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2139576630
 Transform:
   m_ObjectHideFlags: 0
