@@ -672,7 +672,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1400366577265340379}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: ReloadScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1428,19 +1428,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9100119632758714400, guid: aa3821f6a5e16fa4ab337a065040cb36, type: 3}
       propertyPath: m_margin.w
-      value: -0.4527397
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9100119632758714400, guid: aa3821f6a5e16fa4ab337a065040cb36, type: 3}
       propertyPath: m_margin.x
-      value: -0.30937973
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9100119632758714400, guid: aa3821f6a5e16fa4ab337a065040cb36, type: 3}
       propertyPath: m_margin.y
-      value: -0.0290451
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9100119632758714400, guid: aa3821f6a5e16fa4ab337a065040cb36, type: 3}
       propertyPath: m_margin.z
-      value: 0.46292114
+      value: -0.26808164
+      objectReference: {fileID: 0}
+    - target: {fileID: 9100119632758714400, guid: aa3821f6a5e16fa4ab337a065040cb36, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 4a10ea008f2b50e46a4264c87223f797, type: 2}
+    - target: {fileID: 9100119632758714400, guid: aa3821f6a5e16fa4ab337a065040cb36, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 6019535024439584307, guid: 4a10ea008f2b50e46a4264c87223f797, type: 2}
+    - target: {fileID: 9100119632758714400, guid: aa3821f6a5e16fa4ab337a065040cb36, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1551,6 +1563,18 @@ PrefabInstance:
     - target: {fileID: 9100119632758714400, guid: aa3821f6a5e16fa4ab337a065040cb36, type: 3}
       propertyPath: m_margin.z
       value: -0.26808164
+      objectReference: {fileID: 0}
+    - target: {fileID: 9100119632758714400, guid: aa3821f6a5e16fa4ab337a065040cb36, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 4a10ea008f2b50e46a4264c87223f797, type: 2}
+    - target: {fileID: 9100119632758714400, guid: aa3821f6a5e16fa4ab337a065040cb36, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 6019535024439584307, guid: 4a10ea008f2b50e46a4264c87223f797, type: 2}
+    - target: {fileID: 9100119632758714400, guid: aa3821f6a5e16fa4ab337a065040cb36, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

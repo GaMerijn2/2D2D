@@ -69,4 +69,9 @@ public class MenuManager : MonoBehaviour
         StaticData.CurrentLevel = id;
         SceneManager.LoadScene("JonasTestScene");
     }
+
+    public void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }
