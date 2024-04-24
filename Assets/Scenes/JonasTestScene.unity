@@ -5749,6 +5749,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7715039866757893923, guid: 955360ece0f5a004e85e5c541b6059de, type: 3}
   m_PrefabInstance: {fileID: 1238606176}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &631348916 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1400366577265340379, guid: 5f7c5ad6ac63b8441aaad3011dff545c, type: 3}
+  m_PrefabInstance: {fileID: 1748001170}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e8027057e77a034d9e3459126e8c162, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &650622214
 GameObject:
   m_ObjectHideFlags: 0
@@ -5948,7 +5959,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &666463164
 Transform:
   m_ObjectHideFlags: 0
@@ -12764,7 +12775,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6166930563349027301, guid: 7ebe339b691e0794e83b4ebc3f370ccd, type: 3}
       propertyPath: m_text
-      value: Press 'Right Mouse Button' to switch dimensions
+      value: Press 'K' to switch dimensions
       objectReference: {fileID: 0}
     - target: {fileID: 6714091936720017659, guid: 7ebe339b691e0794e83b4ebc3f370ccd, type: 3}
       propertyPath: m_Pivot.x
@@ -12849,13 +12860,36 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3389606767814590550, guid: 7ebe339b691e0794e83b4ebc3f370ccd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1478267876}
+    - targetCorrespondingSourceObject: {fileID: 3389606767814590550, guid: 7ebe339b691e0794e83b4ebc3f370ccd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 7ebe339b691e0794e83b4ebc3f370ccd, type: 3}
 --- !u!224 &1478267874 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6714091936720017659, guid: 7ebe339b691e0794e83b4ebc3f370ccd, type: 3}
   m_PrefabInstance: {fileID: 1478267873}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1478267875 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3389606767814590550, guid: 7ebe339b691e0794e83b4ebc3f370ccd, type: 3}
+  m_PrefabInstance: {fileID: 1478267873}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1478267876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478267875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0dccb4b394a9cc4ba11840d15878c7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1480820329
 GameObject:
   m_ObjectHideFlags: 0
@@ -14548,7 +14582,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8474065795678978920, guid: 5f7c5ad6ac63b8441aaad3011dff545c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8806166640260996630, guid: 5f7c5ad6ac63b8441aaad3011dff545c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 631348916}
+    - target: {fileID: 8806166640260996630, guid: 5f7c5ad6ac63b8441aaad3011dff545c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 8806166640260996630, guid: 5f7c5ad6ac63b8441aaad3011dff545c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MenuManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8806166640260996630, guid: 5f7c5ad6ac63b8441aaad3011dff545c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16792,7 +16842,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2139576630
 Transform:
   m_ObjectHideFlags: 0
@@ -16981,10 +17031,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3389606767814590550, guid: 7ebe339b691e0794e83b4ebc3f370ccd, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ebe339b691e0794e83b4ebc3f370ccd, type: 3}
 --- !u!1001 &5240625454832135514
 PrefabInstance:
