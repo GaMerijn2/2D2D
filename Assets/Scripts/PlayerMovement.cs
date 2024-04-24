@@ -6,7 +6,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpForce;
     private Vector2 movementDirection;
     private Rigidbody2D rb;
-    private bool isGrounded = false;
 
     [SerializeField] private float coyoteTime = 0.1f;
     private float coyoteTimeCounter;
@@ -18,9 +17,18 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float groundCheckRadius;
     [SerializeField] private LayerMask groundLayer;
     
+    [SerializeField] AudioManager jumpAudioManager;
+    [SerializeField] AudioManager airJumpAudioManager;
+
+    private bool wasGroundedPreviously;
+    [SerializeField] private ParticleSystem particleEffectPrefab;
+
+    
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        jumpAudioManager = GameObject.Find("Jump").GetComponent<AudioManager>();
+        airJumpAudioManager = GameObject.Find("AirJump").GetComponent<AudioManager>();
     }
 
     private bool IsGrounded()
@@ -40,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
         {
             coyoteTimeCounter -= Time.deltaTime;
         }
-        
+
         if (Input.GetButtonDown("Jump"))
         {
             jumpBufferCounter = jumpBufferTime;
@@ -49,6 +57,33 @@ public class PlayerMovement : MonoBehaviour
         {
             jumpBufferCounter -= Time.deltaTime;
         }
+
+        if (Input.GetButtonDown("Jump") && IsGrounded() && coyoteTimeCounter > 0)
+        {
+            Debug.Log("Jump Ounds?");
+            Debug.Log(coyoteTimeCounter);
+            Debug.Log(jumpBufferCounter);
+
+            jumpAudioManager.PlayRandomAudio();
+        }
+
+        if (Input.GetButtonDown("Jump") && !IsGrounded() && coyoteTimeCounter > 0)
+        {
+            Debug.Log("Air Jump Ounds?");
+            Debug.Log(coyoteTimeCounter);
+            Debug.Log(jumpBufferCounter);
+            airJumpAudioManager.PlayRandomAudio();
+
+        }
+        
+        if (IsGrounded() && !wasGroundedPreviously)
+        {
+            PlayParticleEffect();
+        }
+
+        // Update the previous grounded state
+        wasGroundedPreviously = IsGrounded();
+
     
         if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f)
         {
@@ -60,13 +95,17 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
-
             coyoteTimeCounter = 0f;
         }
+    }
+    private void PlayParticleEffect()
+    {
+        particleEffectPrefab.Play();
     }
     
     void FixedUpdate()
     {
         rb.velocity = new Vector2(movementDirection.x, rb.velocity.y);
     }
+
 }
