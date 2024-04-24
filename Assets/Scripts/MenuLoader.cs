@@ -1,17 +1,28 @@
 using UnityEngine;
 using DG.Tweening;
 using UnityEditor;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
     public RectTransform[] Menus;
     public float menuAnimTime;
+    public VolumeProfile profile;
     
     private bool isLoadingMenu;
     private int currentMenu = -1, lastMenu = -1;
-    
-    private void Start() => LoadMenu(0);
+
+    private void Start()
+    {
+        LoadMenu(0);
+        
+        if (profile.TryGet<ColorAdjustments>(out var colorAdjustments))
+        {
+            colorAdjustments.colorFilter.Override(new Color(0.8f, 0.8f, 0.8f));
+        }
+    }
 
     public void LoadMenu(int menuID)
     {
