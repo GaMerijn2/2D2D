@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] AudioManager airJumpAudioManager;
 
     private bool wasGroundedPreviously;
-    [SerializeField] private Object particleEffectPrefab;
+    [SerializeField] private ParticleSystem particleEffectPrefab;
 
     
     void Start()
@@ -100,8 +100,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void PlayParticleEffect()
     {
-        // Instantiate the particle effect at the player's position with some offset if needed
-        Instantiate(particleEffectPrefab, transform.position, Quaternion.identity);
+        particleEffectPrefab.Play();
     }
     
     void FixedUpdate()
