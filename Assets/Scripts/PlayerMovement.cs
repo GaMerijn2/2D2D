@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         jumpAudioManager = GameObject.Find("Jump").GetComponent<AudioManager>();
         airJumpAudioManager = GameObject.Find("AirJump").GetComponent<AudioManager>();
+        particleEffectPrefab = GameObject.Find("JumpAndLandParticle").GetComponent<ParticleSystem>();
     }
 
     private bool IsGrounded()
