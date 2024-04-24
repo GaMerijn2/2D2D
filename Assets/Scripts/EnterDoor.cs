@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class EnterDoor : MonoBehaviour
@@ -8,8 +7,16 @@ public class EnterDoor : MonoBehaviour
     {
         Debug.Log("Trigger Entered by: " + other.gameObject.name);
         if (!other.CompareTag("Player")) return;
+
+        var savedTime = PlayerPrefs.GetFloat($"Level{StaticData.CurrentLevel}") == 0
+            ? 6942069420
+            : PlayerPrefs.GetFloat($"Level{StaticData.CurrentLevel}");
         
-        PlayerPrefs.SetFloat($"Level{StaticData.CurrentLevel}", LevelLoader.timer);
+        if (LevelLoader.timer < savedTime)
+        {
+            PlayerPrefs.SetFloat($"Level{StaticData.CurrentLevel}", LevelLoader.timer);
+        }
+
         StaticData.CurrentLevel++;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
