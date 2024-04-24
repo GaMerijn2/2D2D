@@ -1,5 +1,6 @@
 using UnityEngine;
 using DG.Tweening;
+using UnityEditor;
 using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
@@ -20,18 +21,20 @@ public class MenuManager : MonoBehaviour
         isLoadingMenu = true;
         lastMenu = currentMenu;
         currentMenu = menuID;
+        
+        Time.timeScale = SceneManager.GetActiveScene().name == "JonasTestScene" && menuID == 1 ? 0 : 1; // pause
 
-        Menus[currentMenu].GetComponent<CanvasGroup>().DOFade(0, 0f);
-        Menus[currentMenu].DOScale(2, 0f);
+        Menus[currentMenu].GetComponent<CanvasGroup>().DOFade(0, 0f).SetUpdate(true);
+        Menus[currentMenu].DOScale(2, 0f).SetUpdate(true);
 
         for (int i = 0; i < Menus.Length; i++)
         {
             if (i == currentMenu)
             {
-                Menus[i].DOScale(1, 0);
-                Menus[i].DOLocalMoveY(100, 0);
-                Menus[i].DOLocalMoveY(0, menuAnimTime);
-                Menus[i].GetComponent<CanvasGroup>().DOFade(1, menuAnimTime).OnComplete(() =>
+                Menus[i].DOScale(1, 0).SetUpdate(true);
+                Menus[i].DOLocalMoveY(100, 0).SetUpdate(true);
+                Menus[i].DOLocalMoveY(0, menuAnimTime).SetUpdate(true);
+                Menus[i].GetComponent<CanvasGroup>().DOFade(1, menuAnimTime).SetUpdate(true).OnComplete(() =>
                 {
                     isLoadingMenu = false;
                 });
@@ -40,19 +43,19 @@ public class MenuManager : MonoBehaviour
             }
             else if (i == lastMenu)
             {
-                Menus[i].DOScale(1, 0);
+                Menus[i].DOScale(1, 0).SetUpdate(true);
                 Menus[i].GetComponent<CanvasGroup>().interactable = false;
                 Menus[i].GetComponent<CanvasGroup>().blocksRaycasts = false;
-                Menus[i].DOLocalMoveY(-100, menuAnimTime);
-                Menus[i].GetComponent<CanvasGroup>().DOFade(0, menuAnimTime * 0.6f).OnComplete(() =>
+                Menus[i].DOLocalMoveY(-100, menuAnimTime).SetUpdate(true);
+                Menus[i].GetComponent<CanvasGroup>().DOFade(0, menuAnimTime * 0.6f).SetUpdate(true).OnComplete(() =>
                 {
-                    Menus[lastMenu].transform.DOScale(0, 0f);
+                    Menus[lastMenu].transform.DOScale(0, 0f).SetUpdate(true);
                 });
             }
             else
             {
-                Menus[i].DOScale(0.0f, 0);
-                Menus[i].GetComponent<CanvasGroup>().DOFade(0, 0);
+                Menus[i].DOScale(0.0f, 0).SetUpdate(true);
+                Menus[i].GetComponent<CanvasGroup>().DOFade(0, 0).SetUpdate(true);
                 Menus[i].GetComponent<CanvasGroup>().interactable = false;
                 Menus[i].GetComponent<CanvasGroup>().blocksRaycasts = false;
             }
@@ -73,5 +76,11 @@ public class MenuManager : MonoBehaviour
     public void ReloadScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    [MenuItem("JAM/Clear PlayerPrefs Data")]
+    public static void ClearData()
+    {
+        PlayerPrefs.DeleteAll();
     }
 }
