@@ -21,7 +21,7 @@ public class LevelLoader : MonoBehaviour
     public void SetClip(bool isOrange)
     {
         music.clip = isOrange ? Blue : Orange;
-        music.time = Time.time % music.clip.length;
+        music.time = TimeCopy.time % music.clip.length;
         music.Play();
     }
 
