@@ -89,6 +89,11 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
     [MenuItem("JAM/Clear PlayerPrefs Data")]
     public static void ClearData()
     {
