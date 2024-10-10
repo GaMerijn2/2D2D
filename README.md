@@ -36,20 +36,22 @@ private void MovePlayer() {
 }
 Dimension Switching
 Switch between dimensions to access alternate paths and hidden platforms.
-
+```
 
 Code Overview:
-csharp
+```csharp
+
 Copy code
 // Dimension Switching Code
 private void SwitchDimension() {
     // Logic for toggling between dimensions
 }
+```
+
 Coyote Time Mechanic
 Allows a brief grace period after leaving a platform for smoother jumps.
 
-
-csharp
+```csharp
 Copy code
 // Coyote Time Mechanic
 private void UpdateCoyoteTime() {
@@ -59,11 +61,13 @@ private void UpdateCoyoteTime() {
         coyoteTimeCounter -= Time.deltaTime; // Decrease over time
     }
 }
+```
+
 Jump Buffer Mechanic
 Adds a buffer for jump input, making jumps more responsive and forgiving.
 
 
-csharp
+```csharp
 Copy code
 // Jump Buffer Mechanic
 private void UpdateJumpBuffer() {
@@ -73,21 +77,23 @@ private void UpdateJumpBuffer() {
         jumpBufferCounter -= Time.deltaTime;
     }
 }
+```
+
 Ground Check
 Checks if the player is grounded to ensure proper jump mechanics.
 
-
-csharp
+```csharp
 Copy code
 // Ground Check
 private bool IsGrounded() {
     return Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 }
+```
+
 Variable Jump Height
 Allows players to control jump height by releasing the jump button early.
 
-
-csharp
+```csharp
 Copy code
 // Variable Jump Height
 private void ApplyVariableJumpHeight() {
@@ -95,29 +101,6 @@ private void ApplyVariableJumpHeight() {
         rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f); // Shorten jump height
     }
 }
-Installation
-To set up 2D2D locally, follow these steps:
-
-Clone the Repository:
-
-bash
-Copy code
-git clone https://github.com/GaMerijn2/IEGJ-2024.git
-Open in Unity:
-
-Ensure you have Unity version X.X.X or higher.
-Open the project in Unity and allow it to load all dependencies.
-Build and Run:
-
-Configure your build settings, then hit Play to start testing the game in the editor.
-Gameplay Controls
-Move: Left and Right Arrow Keys or A and D
-Jump: Spacebar
-Dimension Switch: Key (specific key, e.g., E)
-Contribution Guidelines
-Contributions are welcome! Please fork the repository and create a pull request with a clear description of your changes. If you want to discuss ideas before coding, feel free to open an issue.
-
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
+```
 
 Enjoy exploring dimensions with 2D2D! For any questions or feedback, feel free to reach out via GitHub Issues.
