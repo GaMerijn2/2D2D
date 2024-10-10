@@ -38,21 +38,11 @@ Dimension Switching
 Switch between dimensions to access alternate paths and hidden platforms.
 ```
 
-### Code Overview:
-```csharp
-
-Copy code
-// Dimension Switching Code
-private void SwitchDimension() {
-    // Logic for toggling between dimensions
-}
-```
-
 ### Coyote Time Mechanic
 Allows a brief grace period after leaving a platform for smoother jumps.
 
 ```csharp
-Copy code
+
 // Coyote Time Mechanic
 private void UpdateCoyoteTime() {
     if (IsGrounded()) {
@@ -68,7 +58,7 @@ Adds a buffer for jump input, making jumps more responsive and forgiving.
 
 
 ```csharp
-Copy code
+
 // Jump Buffer Mechanic
 private void UpdateJumpBuffer() {
     if (Input.GetButtonDown("Jump")) {
@@ -83,7 +73,7 @@ private void UpdateJumpBuffer() {
 Checks if the player is grounded to ensure proper jump mechanics.
 
 ```csharp
-Copy code
+
 // Ground Check
 private bool IsGrounded() {
     return Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
@@ -94,7 +84,7 @@ private bool IsGrounded() {
 Allows players to control jump height by releasing the jump button early.
 
 ```csharp
-Copy code
+
 // Variable Jump Height
 private void ApplyVariableJumpHeight() {
     if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f) {
