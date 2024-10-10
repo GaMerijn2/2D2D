@@ -7,10 +7,6 @@ Welcome to **2D2D**, a challenging dimensional puzzle platformer where players n
 ## Table of Contents
 - [Features](#features)
 - [Mechanics](#mechanics)
-- [Installation](#installation)
-- [Gameplay Controls](#gameplay-controls)
-- [Contribution Guidelines](#contribution-guidelines)
-- [License](#license)
 
 ## Features
 
