@@ -38,7 +38,7 @@ Dimension Switching
 Switch between dimensions to access alternate paths and hidden platforms.
 ```
 
-Code Overview:
+### Code Overview:
 ```csharp
 
 Copy code
@@ -48,7 +48,7 @@ private void SwitchDimension() {
 }
 ```
 
-Coyote Time Mechanic
+### Coyote Time Mechanic
 Allows a brief grace period after leaving a platform for smoother jumps.
 
 ```csharp
@@ -63,7 +63,7 @@ private void UpdateCoyoteTime() {
 }
 ```
 
-Jump Buffer Mechanic
+### Jump Buffer Mechanic
 Adds a buffer for jump input, making jumps more responsive and forgiving.
 
 
@@ -79,7 +79,7 @@ private void UpdateJumpBuffer() {
 }
 ```
 
-Ground Check
+### Ground Check
 Checks if the player is grounded to ensure proper jump mechanics.
 
 ```csharp
@@ -90,7 +90,7 @@ private bool IsGrounded() {
 }
 ```
 
-Variable Jump Height
+### Variable Jump Height
 Allows players to control jump height by releasing the jump button early.
 
 ```csharp
